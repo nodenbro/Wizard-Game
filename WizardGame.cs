@@ -1,31 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
+using wizard_namespace;
 
 
 class WizardGame 
 {
     static void Main ()
     {
-        string username;
-        string affinity;
+        Console.WriteLine("What is your name galiant wizard");
+        string player1 = Console.ReadLine();
+        player1 = string.IsNullOrEmpty(player1) ? "Nameless Zesty Wizaaaard" : player1;
 
-        Console.Title = "The Tales of a Young Wizard";
-        Console.ForegroundColor = ConsoleColor.DarkRed;
-        Console.WriteLine("Hello Young Wizard, my name is Aldros");
-        Console.WriteLine("What is your name?");
-        Console.ForegroundColor = ConsoleColor.White;
-        username = Console.ReadLine();
+        Random rnd = new Random();
 
-        if(string.IsNullOrEmpty(username))
+        Wizard wizard01 = new Wizard(player1, Console.ReadLine());
+
+        Console.WriteLine(wizard01.affinity);
+
+        // Console.Title = "The Tales of a Young Wizard";
+        // Console.ForegroundColor = ConsoleColor.DarkRed;
+        // Console.WriteLine("Hello Young Wizard, my name is Aldros");
+        // Console.WriteLine("What is your name?");
+        // Console.ForegroundColor = ConsoleColor.White;
+        // username = Console.ReadLine();
+
+        if(string.IsNullOrEmpty(player1))
         {
             Console.ForegroundColor = ConsoleColor.DarkRed;
-            username = "The one without a Name";
-            Console.WriteLine("Since you refuse to give me your name, I'll refer to you as " + username);
+            player1 = "Nameless Zesty Wizaaaard";
+            Console.WriteLine("Since you refuse to give me your name, I'll refer to you as " + player1);
         }
         else
         {
             Console.ForegroundColor = ConsoleColor.DarkRed;
-            Console.WriteLine(username + ", you say?");
+            Console.WriteLine(player1 + ", you say?");
         }
 
         Console.WriteLine("That's a name befitting a Grand Wizard, I'm sure of it.");
@@ -56,9 +65,8 @@ class WizardGame
             Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine("What element are you feeling more connected with?\n");
             Console.ForegroundColor = ConsoleColor.White;
-            affinity = Console.ReadLine() ?? "fire";
-            string lcaseAffinity = affinity.ToLower();
-            
+            wizard01.affinity = Console.ReadLine();
+            string lcaseAffinity = wizard01.affinity.ToLower();
 
             switch (lcaseAffinity)
             {
