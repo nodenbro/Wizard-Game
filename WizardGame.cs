@@ -54,7 +54,7 @@ class WizardGame
         do{
 
             Console.ForegroundColor = ConsoleColor.DarkRed;
-            Console.WriteLine("What element are you feeling more connected with?");
+            Console.WriteLine("What element are you feeling more connected with?\n");
             Console.ForegroundColor = ConsoleColor.White;
             affinity = Console.ReadLine() ?? "fire";
             string lcaseAffinity = affinity.ToLower();
@@ -88,8 +88,8 @@ class WizardGame
                     incorrectAffinity = false;
                     break;
                 default:
-                    Console.WriteLine("Choose a proper Element please.");
-                    Console.ReadKey();
+                    Console.WriteLine("Choose a proper Element please.\n");
+                    // Console.ReadKey();
                     incorrectAffinity = true;
                     break;
             }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "t4I9C+aGxGsU2r7L7YlQ3wdlp9Eez8ibipajO9QB1fE0xgR2dQoddBp4762CjvzEKGYW2mORIOfnBIKLxtRF3w==",
+  "dgSpecHash": "hmStSxqLSI8oPinLqq32pVcLfKSf/raOXJ/7Y2+Rtky0vWcwpqGBnjqDNAq+56hCDT0W4ibNDD+GI6LpW01YWQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Test\\Desktop\\C# Basic Game\\C# Basic Game.csproj",
+  "projectFilePath": "C:\\Users\\Test\\Desktop\\C# Wizard Basic Game\\C# Basic Game.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Test\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.16\\microsoft.netcore.app.ref.7.0.16.nupkg.sha512",
     "C:\\Users\\Test\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.16\\microsoft.windowsdesktop.app.ref.7.0.16.nupkg.sha512",

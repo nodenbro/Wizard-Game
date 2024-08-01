@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Test\\Desktop\\C# Basic Game\\C# Basic Game.csproj",
+      "projectUniqueName": "C:\\Users\\Test\\Desktop\\C# Wizard Basic Game\\C# Basic Game.csproj",
       "projectName": "C# Basic Game",
-      "projectPath": "C:\\Users\\Test\\Desktop\\C# Basic Game\\C# Basic Game.csproj",
+      "projectPath": "C:\\Users\\Test\\Desktop\\C# Wizard Basic Game\\C# Basic Game.csproj",
       "packagesPath": "C:\\Users\\Test\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Test\\Desktop\\C# Basic Game\\obj\\",
+      "outputPath": "C:\\Users\\Test\\Desktop\\C# Wizard Basic Game\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Test\\AppData\\Roaming\\NuGet\\NuGet.Config",
