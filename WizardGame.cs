@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
-using wizard_namespace;
+using wizard_char;
 
 
 class WizardGame 
@@ -36,6 +36,8 @@ class WizardGame
             Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine(player1 + ", you say?");
         }
+
+        wizard01.CastSpell();
 
         Console.WriteLine("That's a name befitting a Grand Wizard, I'm sure of it.");
         Console.WriteLine("There are six elements that exist.\n");

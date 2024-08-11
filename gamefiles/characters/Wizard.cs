@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System;
 using Microsoft.VisualBasic;
 using System.Globalization;
-namespace wizard_namespace;
+namespace wizard_char;
 
 
 class Wizard 
@@ -68,7 +68,7 @@ class Wizard
             if (experience >= expToLvlUp)
             {
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
-                Console.WriteLine("Congratulations " + name + " , you have Leveled Up\n");
+                Console.WriteLine("Congratulations " + name + " , you have Leveled Up.\n");
 
                 level += 1;
 
