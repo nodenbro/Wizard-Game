@@ -1,0 +1,28 @@
+C:\Users\Test\Desktop\C# Basic Game\bin\Debug\net7.0\C# Basic Game.exe
+C:\Users\Test\Desktop\C# Basic Game\bin\Debug\net7.0\C# Basic Game.deps.json
+C:\Users\Test\Desktop\C# Basic Game\bin\Debug\net7.0\C# Basic Game.runtimeconfig.json
+C:\Users\Test\Desktop\C# Basic Game\bin\Debug\net7.0\C# Basic Game.dll
+C:\Users\Test\Desktop\C# Basic Game\bin\Debug\net7.0\C# Basic Game.pdb
+C:\Users\Test\Desktop\C# Basic Game\obj\Debug\net7.0\C# Basic Game.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Test\Desktop\C# Basic Game\obj\Debug\net7.0\C# Basic Game.AssemblyInfoInputs.cache
+C:\Users\Test\Desktop\C# Basic Game\obj\Debug\net7.0\C# Basic Game.AssemblyInfo.cs
+C:\Users\Test\Desktop\C# Basic Game\obj\Debug\net7.0\C# Basic Game.csproj.CoreCompileInputs.cache
+C:\Users\Test\Desktop\C# Basic Game\obj\Debug\net7.0\C# Basic Game.dll
+C:\Users\Test\Desktop\C# Basic Game\obj\Debug\net7.0\refint\C# Basic Game.dll
+C:\Users\Test\Desktop\C# Basic Game\obj\Debug\net7.0\C# Basic Game.pdb
+C:\Users\Test\Desktop\C# Basic Game\obj\Debug\net7.0\C# Basic Game.genruntimeconfig.cache
+C:\Users\Test\Desktop\C# Basic Game\obj\Debug\net7.0\ref\C# Basic Game.dll
+C:\Users\Test\Desktop\C# Wizard Basic Game\bin\Debug\net7.0\C# Basic Game.exe
+C:\Users\Test\Desktop\C# Wizard Basic Game\bin\Debug\net7.0\C# Basic Game.deps.json
+C:\Users\Test\Desktop\C# Wizard Basic Game\bin\Debug\net7.0\C# Basic Game.runtimeconfig.json
+C:\Users\Test\Desktop\C# Wizard Basic Game\bin\Debug\net7.0\C# Basic Game.dll
+C:\Users\Test\Desktop\C# Wizard Basic Game\bin\Debug\net7.0\C# Basic Game.pdb
+C:\Users\Test\Desktop\C# Wizard Basic Game\obj\Debug\net7.0\C# Basic Game.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Test\Desktop\C# Wizard Basic Game\obj\Debug\net7.0\C# Basic Game.AssemblyInfoInputs.cache
+C:\Users\Test\Desktop\C# Wizard Basic Game\obj\Debug\net7.0\C# Basic Game.AssemblyInfo.cs
+C:\Users\Test\Desktop\C# Wizard Basic Game\obj\Debug\net7.0\C# Basic Game.csproj.CoreCompileInputs.cache
+C:\Users\Test\Desktop\C# Wizard Basic Game\obj\Debug\net7.0\C# Basic Game.dll
+C:\Users\Test\Desktop\C# Wizard Basic Game\obj\Debug\net7.0\refint\C# Basic Game.dll
+C:\Users\Test\Desktop\C# Wizard Basic Game\obj\Debug\net7.0\C# Basic Game.pdb
+C:\Users\Test\Desktop\C# Wizard Basic Game\obj\Debug\net7.0\C# Basic Game.genruntimeconfig.cache
+C:\Users\Test\Desktop\C# Wizard Basic Game\obj\Debug\net7.0\ref\C# Basic Game.dll
