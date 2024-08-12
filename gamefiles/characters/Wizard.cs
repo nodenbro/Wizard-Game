@@ -39,13 +39,13 @@ class Wizard
         {
             string[] spells = 
                 {
-                "Pink Fire",
-                "Midget Flame",
-                 "Dark Lords Semen",
-                "My girlfriends anger issues",
-                "i had no idea what to write here",
-                "avadakadabra kurwaaa",
-                 "random bullshit go"
+                    "Pink Fire",
+                    "Midget Flame",
+                    "Dark Lords Semen",
+                    "My girlfriends anger issues",
+                    "i had no idea what to write here",
+                    "avadakadabra kurwaaa",
+                    "random bullshit go"
                 };
             if (remainingMana >= 50)
             {

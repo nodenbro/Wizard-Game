@@ -8,22 +8,20 @@ class WizardGame
 {
     static void Main ()
     {
-        Console.WriteLine("What is your name galiant wizard");
+        Console.Title = "The Tales of a Young Wizard";
+        Console.ForegroundColor = ConsoleColor.DarkRed;
+        Console.WriteLine("Hello Young Wizard, my name is Aldros!");
+
+        Console.WriteLine("What is your name galiant wizard?");
         string player1 = Console.ReadLine();
         player1 = string.IsNullOrEmpty(player1) ? "Nameless Zesty Wizaaaard" : player1;
 
         Random rnd = new Random();
-
+        Console.WriteLine("What is your affinity, yound wizard!");
         Wizard wizard01 = new Wizard(player1, Console.ReadLine());
 
-        Console.WriteLine(wizard01.affinity);
 
-        // Console.Title = "The Tales of a Young Wizard";
-        // Console.ForegroundColor = ConsoleColor.DarkRed;
-        // Console.WriteLine("Hello Young Wizard, my name is Aldros");
-        // Console.WriteLine("What is your name?");
-        // Console.ForegroundColor = ConsoleColor.White;
-        // username = Console.ReadLine();
+
 
         if(string.IsNullOrEmpty(player1))
         {
@@ -43,22 +41,22 @@ class WizardGame
         Console.WriteLine("There are six elements that exist.\n");
 
         Console.ForegroundColor = ConsoleColor.DarkRed;
-        Console.WriteLine("Fire\n");
+        Console.WriteLine("Fire\n" + "Water\n" + "Earth\n" + "Light\n" + "Darkness\n" + "Lightning\n");
 
-        Console.ForegroundColor = ConsoleColor.DarkBlue;
-        Console.WriteLine("Water\n");
+        // Console.ForegroundColor = ConsoleColor.DarkBlue;
+        // Console.WriteLine("Water\n");
 
-        Console.ForegroundColor = ConsoleColor.DarkGreen;
-        Console.WriteLine("Earth\n");
+        // Console.ForegroundColor = ConsoleColor.DarkGreen;
+        // Console.WriteLine("Earth\n");
 
-        Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.WriteLine("Light\n");
+        // Console.ForegroundColor = ConsoleColor.Yellow;
+        // Console.WriteLine("Light\n");
 
-        Console.ForegroundColor = ConsoleColor.DarkGray;
-        Console.WriteLine("Darkness\n");
+        // Console.ForegroundColor = ConsoleColor.DarkGray;
+        // Console.WriteLine("Darkness\n");
 
-        Console.ForegroundColor = ConsoleColor.DarkYellow;
-        Console.WriteLine("Lightning\n");
+        // Console.ForegroundColor = ConsoleColor.DarkYellow;
+        // Console.WriteLine("Lightning\n");
 
 
         bool incorrectAffinity = false;
