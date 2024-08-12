@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
-using wizard_char;
-
+﻿using wizard_char;
 
 class WizardGame 
 {
@@ -14,14 +10,6 @@ class WizardGame
 
         Console.WriteLine("What is your name galiant wizard?");
         string player1 = Console.ReadLine();
-        player1 = string.IsNullOrEmpty(player1) ? "Nameless Zesty Wizaaaard" : player1;
-
-        Random rnd = new Random();
-        Console.WriteLine("What is your affinity, yound wizard!");
-        Wizard wizard01 = new Wizard(player1, Console.ReadLine());
-
-
-
 
         if(string.IsNullOrEmpty(player1))
         {
@@ -35,9 +23,14 @@ class WizardGame
             Console.WriteLine(player1 + ", you say?");
         }
 
+        Random rnd = new Random();
+        Console.WriteLine("What is your affinity, yound wizard!");
+        Wizard wizard01 = new Wizard(player1, Console.ReadLine());
+
+
         wizard01.CastSpell();
 
-        Console.WriteLine("That's a name befitting a Grand Wizard, I'm sure of it.");
+        Console.WriteLine("That's a name befitting a Grand Wizard, I'm sure of it.\n");
         Console.WriteLine("There are six elements that exist.\n");
 
         Console.ForegroundColor = ConsoleColor.DarkRed;
@@ -57,7 +50,6 @@ class WizardGame
 
         // Console.ForegroundColor = ConsoleColor.DarkYellow;
         // Console.WriteLine("Lightning\n");
-
 
         bool incorrectAffinity = false;
         do{
