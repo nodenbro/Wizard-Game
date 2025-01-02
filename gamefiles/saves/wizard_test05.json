@@ -1,0 +1,9 @@
+{
+  "name": "Shkodran",
+  "affinity": "water",
+  "mana": 500,
+  "remainingMana": 500,
+  "experience": 2,
+  "expToLvlUp": 23,
+  "level": 3
+}
