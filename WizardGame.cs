@@ -9,12 +9,12 @@ class WizardGame
 {
     static void Main()
     {
-        if(File.Exists("gamefiles/saves/wizard_test04.json"))
+        if(File.Exists("gamefiles/saves/wizard_test05.json"))
         {
             try
             {
                 // Step 2: Define the path of the JSON file to read
-                string filePath = "gamefiles/saves/wizard_test04.json";
+                string filePath = "gamefiles/saves/wizard_test05.json";
 
                 // Step 3: Read the JSON file into a string
                 string jsonString = File.ReadAllText(filePath);
@@ -26,6 +26,32 @@ class WizardGame
                 // Step 5: Access the deserialized object properties
                 Console.WriteLine($"Wizard's name: {wizard.Name}");
                 Console.WriteLine($"Affinity: {wizard.Affinity}");
+
+                wizard.CastSpell();
+
+                wizard.CastSpell();
+
+                wizard.CastSpell();
+
+                Console.WriteLine($"Your level is: {wizard.Level}");
+
+                Console.WriteLine($"Your Mana is: {wizard.Mana}");
+
+                Console.WriteLine($"Your Remaining Mana is: {wizard.RemainingMana}");
+
+                // Serialize the object to JSON
+                var options = new JsonSerializerOptions { WriteIndented = true };
+                string saveProgress = JsonSerializer.Serialize(wizard, options);
+
+                // Define the path where the JSON file will be saved
+                string saveFilePath = "gamefiles/saves/wizard_test05.json";
+
+                // Write the JSON string to a file
+                File.WriteAllText(saveFilePath, saveProgress);
+
+                // Output the JSON data
+                Console.WriteLine("Game saved created successfully!");
+
                 // Do something with the person object
             }
             catch (Exception err)
@@ -55,6 +81,7 @@ class WizardGame
             // Store the player's name and affinity to the Wizard.cs file
             Wizard wizard01 = new Wizard(playerName, affinity);
 
+            Console.WriteLine($"{wizard01.Level}");
 
             // Display the chosen affinity with corresponding color
             DisplayAffinity(affinity);
@@ -64,13 +91,14 @@ class WizardGame
             string jsonString = JsonSerializer.Serialize(wizard01, options);
 
             // Define the path where the JSON file will be saved
-            string filePath = "gamefiles/saves/wizard_test04.json";
+            string filePath = "gamefiles/saves/wizard_test05.json";
 
             // Write the JSON string to a file
             File.WriteAllText(filePath, jsonString);
 
             // Output the JSON data
             Console.WriteLine("Gamefile created successfully!");
+            
         }
        
 

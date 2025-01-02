@@ -14,29 +14,39 @@ public class Wizard
 
     [JsonPropertyName("affinity")]
     public string Affinity { get; set;}
-    private int mana;
-    private int remainingMana;
-    private float experience;
-    private float expToLvlUp;
-    private int level;
+
+    [JsonPropertyName("mana")]
+    public int Mana { get; set;}
+
+    [JsonPropertyName("remainingMana")]
+    public int RemainingMana { get; set;}
+
+    [JsonPropertyName("experience")]
+    public float Experience { get; set;}
+
+    [JsonPropertyName("expToLvlUp")]
+    public float ExpToLvlUp { get; set;}
+
+    [JsonPropertyName("level")]
+    public int Level { get; set;}
 
     [JsonConstructor]
     public Wizard(string name, string affinity)
     {
 
-        Name = name ?? "Random Wizard Name";
+        Name = name;
 
-        Affinity = affinity ?? "Random affinity";
+        Affinity = affinity;
 
-        mana = 400;
+        Mana = 400;
 
-        remainingMana = 400;
+        RemainingMana = 400;
 
-        experience = 0f;
+        Experience = 0f;
 
-        expToLvlUp = 3f;
+        ExpToLvlUp = 3f;
 
-        level = 1;
+        Level = 1;
     }
 
     public void CastSpell()
@@ -51,48 +61,48 @@ public class Wizard
                 "avadakadabra kurwaaa",
                 "random bullshit go"
             };
-        if (remainingMana >= 50)
+        if (RemainingMana >= 50)
         {
             Random rnd = new Random();
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine(Name + " casts " + spells[rnd.Next(0, 7)] +"\n");
             Console.ForegroundColor = ConsoleColor.White;
 
-            remainingMana -= 50;
-            Console.WriteLine("\nYou have " + remainingMana + " mana\n");
-            experience += 3;
+            RemainingMana -= 50;
+            Console.WriteLine("\nYou have " + RemainingMana + " Mana\n");
+            Experience += 3;
         }
         else
         {
             Console.WriteLine("Oh no, " + Name + " is out of blue juice.\n");
-            Console.WriteLine("Quickly, replenish the mana. \n");
+            Console.WriteLine("Quickly, replenish the Mana. \n");
             Meditate();
         }
 
-        if (experience >= expToLvlUp)
+        if (Experience >= ExpToLvlUp)
         {
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("Congratulations " + Name + " , you have LEVELED UP!.\n");
 
-            level += 1;
+            Level += 1;
 
             Console.ForegroundColor = ConsoleColor.DarkRed;
-            Console.WriteLine(Name + " is now level " + level + "\n");
+            Console.WriteLine(Name + " is now Level " + Level + "\n");
             Console.ForegroundColor = ConsoleColor.White;
 
-            mana += 50;
-            remainingMana = mana;
+            Mana += 50;
+            RemainingMana = Mana;
 
-            experience -= expToLvlUp;
+            Experience -= ExpToLvlUp;
 
-            expToLvlUp += 10;
+            ExpToLvlUp += 10;
         }
     }
 
     public void Meditate()
     {
-        Console.WriteLine(Name + " gathers mana from their surrounding and replenishes their mana.\n");
-        remainingMana = mana;
-        Console.WriteLine("Your mana is back to " + remainingMana + "\n");
+        Console.WriteLine(Name + " gathers Mana from their surrounding and replenishes their Mana.\n");
+        RemainingMana = Mana;
+        Console.WriteLine("Your Mana is back to " + RemainingMana + "\n");
     }
 }
