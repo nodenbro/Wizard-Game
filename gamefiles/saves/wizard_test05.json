@@ -1,9 +1,9 @@
 {
-  "name": "ragip",
-  "affinity": "earth",
-  "mana": 500,
-  "remainingMana": 500,
-  "experience": 2,
-  "expToLvlUp": 23,
-  "level": 3
+  "name": "Ragip",
+  "affinity": "fire",
+  "mana": 550,
+  "remainingMana": 450,
+  "experience": 6,
+  "expToLvlUp": 33,
+  "level": 4
 }

@@ -6,7 +6,8 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        WizardGame game = new WizardGame();
-        game.Start();
+        Console.Title = "Wizard Game";
+        LoadGame loadGame = new LoadGame();
+        loadGame.Load();
     }  
 }
