@@ -1,29 +1,30 @@
-﻿using System;
+﻿namespace Wizard_Game;
+
 using System.IO;
 using wizard_char;
 using System.Text.Json;
-using System.Xml.Linq;
-using System.Security.Cryptography.X509Certificates;
 
 class WizardGame 
 {
-    static void Main()
+    // Starts the game
+    public void Start()
     {
-        if(File.Exists("gamefiles/saves/wizard_test05.json"))
+        // Checks if the save file exists
+        if (File.Exists("gamefiles/saves/wizard_test05.json"))
         {
             try
             {
-                // Step 2: Define the path of the JSON file to read
+                // Defines the path of the JSON savefile to read
                 string filePath = "gamefiles/saves/wizard_test05.json";
 
-                // Step 3: Read the JSON file into a string
+                // Reads the JSON file into a string
                 string jsonString = File.ReadAllText(filePath);
-                Console.WriteLine(jsonString);
 
-                // Step 4: Deserialize the JSON string to a C# object
+
+                // Step 4: Deserializes the JSON string to a C# object
                 Wizard wizard = JsonSerializer.Deserialize<Wizard>(jsonString);
 
-                // Step 5: Access the deserialized object properties
+                // Uses the deserialized object to use the properties
                 Console.WriteLine($"Wizard's name: {wizard.Name}");
                 Console.WriteLine($"Affinity: {wizard.Affinity}");
 
@@ -50,22 +51,24 @@ class WizardGame
                 File.WriteAllText(saveFilePath, saveProgress);
 
                 // Output the JSON data
-                Console.WriteLine("Game saved created successfully!");
+                Console.WriteLine("Game saved successfully!");
 
-                // Do something with the person object
+
             }
             catch (Exception err)
             {
                 Console.WriteLine($"Error reading or deserializing the file: {err.Message}");
             }
-        }else
+        }
+        else
         {
+
             // Set console title and color
             Console.Title = "The Tales of a Young Wizard";
             Console.ForegroundColor = ConsoleColor.White;
-            
+
             // Greet the player and get their name
-            string narrator = "Aldros"; 
+            string narrator = "Aldros";
             Console.WriteLine($"{narrator}: Hello Young Wizard, my name is Aldros!\n");
 
             Console.WriteLine($"{narrator}: What is your name, gallant wizard?\n");
@@ -98,11 +101,9 @@ class WizardGame
 
             // Output the JSON data
             Console.WriteLine("Gamefile created successfully!");
-            
-        }
-       
 
-        
+        }
+
         // Keep the console open
         Console.ReadKey();
     }
@@ -154,7 +155,7 @@ class WizardGame
             }
             else
             {
-                Console.WriteLine("Choose a valid element please.\n");
+                Console.WriteLine("\nChoose a valid element please.\n");
             }
         }
         return affinity;
@@ -178,5 +179,6 @@ class WizardGame
         Console.ForegroundColor = affinityColors[affinity];
         Console.WriteLine($"Aha, so you chose {affinity} I see");
         Console.ForegroundColor = ConsoleColor.White;
+        
     }
 }
