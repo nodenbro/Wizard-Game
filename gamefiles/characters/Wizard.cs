@@ -1,11 +1,5 @@
-using System.Collections.Generic;
-using System;
-using System.Text.Json;
-using Microsoft.VisualBasic;
-using System.Globalization;
 using System.Text.Json.Serialization;
 namespace wizard_char;
-
 
 public class Wizard 
 {
