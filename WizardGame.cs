@@ -3,9 +3,10 @@
 using System.IO;
 using wizard_char;
 using System.Text.Json;
+using gamefiles.config;
 
 class WizardGame 
-{
+{  
     // Starts the game
     public void Start()
     {
@@ -21,24 +22,31 @@ class WizardGame
                 string jsonString = File.ReadAllText(filePath);
 
 
+
                 // Step 4: Deserializes the JSON string to a C# object
                 Wizard wizard = JsonSerializer.Deserialize<Wizard>(jsonString);
 
-                // Uses the deserialized object to use the properties
+                // Uses the deserialized object to use the properties as well as add delay
                 Console.WriteLine($"Wizard's name: {wizard.Name}");
                 Console.WriteLine($"Affinity: {wizard.Affinity}");
 
                 wizard.CastSpell();
+                GameDelays.actionDelay();
 
                 wizard.CastSpell();
+                GameDelays.actionDelay();
 
                 wizard.CastSpell();
+                GameDelays.actionDelay();
 
                 Console.WriteLine($"Your level is: {wizard.Level}");
+                GameDelays.actionDelay();
 
                 Console.WriteLine($"Your Mana is: {wizard.Mana}");
+                GameDelays.actionDelay();
 
                 Console.WriteLine($"Your Remaining Mana is: {wizard.RemainingMana}");
+                GameDelays.actionDelay();
 
                 // Serialize the object to JSON
                 var options = new JsonSerializerOptions { WriteIndented = true };

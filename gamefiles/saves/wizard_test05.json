@@ -2,8 +2,8 @@
   "name": "Ragip",
   "affinity": "fire",
   "mana": 550,
-  "remainingMana": 450,
-  "experience": 6,
+  "remainingMana": 300,
+  "experience": 15,
   "expToLvlUp": 33,
   "level": 4
 }
