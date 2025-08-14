@@ -18,8 +18,7 @@ public class LoadGame
             {
                 try
                 {
-                    GameDelays loadDelay = new GameDelays();
-                    loadDelay.loadDelay();
+                    GameDelays.loadDelay();
                     // Load the main game file
                     WizardGame game = new WizardGame();
                     game.Start();
@@ -35,8 +34,7 @@ public class LoadGame
 
                 // Here you load the new game file after waiting for a few seconds to execute
 
-                GameDelays startDelay = new GameDelays();
-                startDelay.newGameDelay();
+                GameDelays.newGameDelay();
 
                 WizardGame game = new WizardGame();
                 game.Start();
