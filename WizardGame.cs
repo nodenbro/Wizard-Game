@@ -4,12 +4,15 @@ using System.IO;
 using wizard_char;
 using System.Text.Json;
 using gamefiles.config;
+using gamefiles.epilogue;
+
 
 class WizardGame 
 {  
     // Starts the game
     public void Start()
     {
+        Commands command = new Commands();
         // Checks if the save file exists
         if (File.Exists("gamefiles/saves/wizard_test05.json"))
         {
@@ -61,6 +64,8 @@ class WizardGame
                 // Output the JSON data
                 Console.WriteLine("Game saved successfully!");
 
+                epilogue_chap_1 epilogue = new epilogue_chap_1();
+                epilogue.StartEpilogueCh1(wizard);
 
             }
             catch (Exception err)
@@ -110,6 +115,9 @@ class WizardGame
             // Output the JSON data
             Console.WriteLine("Gamefile created successfully!");
 
+            epilogue_chap_1 epilogue = new epilogue_chap_1();
+            epilogue.StartEpilogueCh1(wizard01);
+
         }
 
         // Keep the console open
@@ -121,6 +129,12 @@ class WizardGame
     {
         Console.ForegroundColor = ConsoleColor.DarkCyan;
         string playerName = Console.ReadLine();
+
+        if(playerName == "!commands")
+        {
+            Commands.ProcessCommand("!commands");
+        }
+
         if (string.IsNullOrEmpty(playerName))
         {
             playerName = "nameless Zesty Wizaaaard";
@@ -156,6 +170,11 @@ class WizardGame
             Console.WriteLine("What element are you feeling more connected with?\n");
             Console.ForegroundColor = ConsoleColor.White;
             affinity = Console.ReadLine()?.ToLower();
+
+            if(affinity == "!commands")
+            {
+                Commands.ProcessCommand("!commands");
+            }
 
             if (Array.Exists(validAffinities, element => element == affinity))
             {
