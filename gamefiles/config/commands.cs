@@ -1,33 +1,34 @@
-using System.Collections.Generic;
+namespace gamefiles.config;
+
 using System;
-using System.Text.Json;
-using Microsoft.VisualBasic;
-using System.Globalization;
-using System.Text.Json.Serialization;
-using System.IO;
-namespace game_commands;
+
 
 class Commands
 {
 
-        string input = Console.ReadLine();
+        // string input = Console.ReadLine();
         // ProcessCommand(input);
+        
 
     public static void ProcessCommand(string command)
     {
-        Console.WriteLine("Welcome to the command line interface!");
-        Console.WriteLine("Type 'help' to see a list of available commands.");
-        switch (command.ToLower())
+        if (command == "!commands")
         {
-            case "help":
-                ShowHelp();
-                break;
-            case "exit":
-                ExitGame();
-                break;
-            default:
-                Console.WriteLine("Unknown command. Type 'help' for a list of commands.");
-                break;
+            Console.WriteLine("Welcome to the command line interface!");
+            Console.WriteLine("Type '!help' to see a list of available commands.");
+            string input = Console.ReadLine();
+            switch (input.ToLower())
+            {
+                case "!help":
+                    ShowHelp();
+                    break;
+                case "!exit":
+                    ExitGame();
+                    break;
+                default:
+                    Console.WriteLine("Unknown command. Type '!help' for a list of commands.");
+                    break;
+            }
         }
     }
     public static void ShowHelp()
@@ -41,6 +42,12 @@ class Commands
     public static void ExitGame()
     {
         Console.WriteLine("Exiting the game. Goodbye!");
+
+        // Delay the exit text before closing
+        Random random = new Random();
+        int timeDelay = random.Next(2, 3);
+        Thread.Sleep(timeDelay * 1000);
+
         Environment.Exit(0);
     }
 }
