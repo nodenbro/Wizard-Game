@@ -1,4 +1,4 @@
-﻿namespace Wizard_Game;
+﻿namespace MainMenu;
 
 using System.IO;
 using wizard_char;
@@ -125,12 +125,12 @@ class WizardGame
     }
 
     // Function to get player's name (with default if blank)
-    static string GetplayerName()
+    public static string GetplayerName()
     {
         Console.ForegroundColor = ConsoleColor.DarkCyan;
         string playerName = Console.ReadLine();
 
-        if(playerName == "!commands")
+        if (playerName == "!commands")
         {
             Commands.ProcessCommand("!commands");
         }
@@ -144,21 +144,40 @@ class WizardGame
         else
         {
             Console.ForegroundColor = ConsoleColor.DarkRed;
-            Console.WriteLine($"{playerName}, you say?");
+            Console.WriteLine($"\n{playerName}, you say?");
         }
         return playerName;
     }
 
     // Function to describe the elements available
-    static void DescribeElements()
+
+    public static void DescribeElements()
     {
-        Console.WriteLine("There are six elements that exist.\n");
+        Console.WriteLine("There are six elements that exist.");
         Console.ForegroundColor = ConsoleColor.DarkRed;
-        Console.WriteLine("Fire\nWater\nEarth\nLight\nDarkness\nLightning\n");
+        // Console.WriteLine("Fire\nWater\nEarth\nLight\nDarkness\nLightning\n");
+
+        // Dictionary mapping affinity to color
+        var affinityColors = new Dictionary<string, ConsoleColor>
+        {
+            { "fire", ConsoleColor.Red },
+            { "water", ConsoleColor.Blue },
+            { "earth", ConsoleColor.DarkGreen },
+            { "light", ConsoleColor.Yellow },
+            { "darkness", ConsoleColor.DarkMagenta },
+            { "lightning", ConsoleColor.Yellow }
+        };
+
+        foreach (var affinityColor in affinityColors)
+        {
+            Console.ForegroundColor = affinityColor.Value;
+            Console.WriteLine("\n" + affinityColor.Key);
+        }
+
     }
 
     // Function to get the wizard's affinity and ensure it's valid
-    static string GetWizardAffinity()
+    public static string GetWizardAffinity()
     {
         string[] validAffinities = { "fire", "water", "earth", "light", "darkness", "lightning" };
         bool isValid = false;
@@ -167,7 +186,7 @@ class WizardGame
         while (!isValid)
         {
             Console.ForegroundColor = ConsoleColor.DarkRed;
-            Console.WriteLine("What element are you feeling more connected with?\n");
+            Console.WriteLine("\nWhat element are you feeling more connected with?\n");
             Console.ForegroundColor = ConsoleColor.White;
             affinity = Console.ReadLine()?.ToLower();
 
@@ -189,7 +208,7 @@ class WizardGame
     }
 
     // Function to display the affinity with the corresponding color
-    static void DisplayAffinity(string affinity)
+    public static void DisplayAffinity(string affinity)
     {
         // Dictionary mapping affinity to color
         var affinityColors = new Dictionary<string, ConsoleColor>

@@ -36,6 +36,9 @@ class Commands
         Console.WriteLine("Available commands:");
         Console.WriteLine("1. help - Show this help message");
         Console.WriteLine("2. exit - Exit the game");
+        Console.Clear();
+        
+        return;
         // Add more commands as needed
     }
 

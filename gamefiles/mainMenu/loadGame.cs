@@ -1,4 +1,4 @@
-namespace Wizard_Game;
+namespace MainMenu;
 
 using System.IO;
 using gamefiles.config;
@@ -8,11 +8,11 @@ public class LoadGame
 
     public void Load()
     {
-        Console.WriteLine("Welcome to the Wizard Game! Would you like to continue your load game or would you like to start a new game? (Y/N)\n");
-        string input = Console.ReadLine()?.ToLower();
+        // Console.WriteLine("Welcome to the Wizard Game! Would you like to continue your load game or would you like to start a new game? (Y/N)\n");
+        // string input = Console.ReadLine()?.ToLower();
 
-        if (input == "y")
-        {
+        // if (input == "y")
+        // {
             // Check if the save file exists
             if (File.Exists("gamefiles/saves/wizard_test05.json"))
             {
@@ -40,12 +40,14 @@ public class LoadGame
                 game.Start();
                 Console.ReadKey();
             }
-        }
-        else if (input == "n")
-        {
-            Console.WriteLine("Starting a new game...");
-            // Here you load the new game file
-            Console.ReadKey();
-        }
+        // }
+        // else if (input == "n")
+        // {
+        //     Console.WriteLine("Starting a new game...");
+        //     StartGame newGame = new StartGame();
+        //     newGame.NewGame();
+        //     // Here you load the new game file
+        //     Console.ReadKey();
+        // }
     }
 }
