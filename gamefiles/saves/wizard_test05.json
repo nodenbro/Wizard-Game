@@ -1,0 +1,9 @@
+{
+  "name": "erblin",
+  "affinity": "lightning",
+  "mana": 400,
+  "remainingMana": 400,
+  "experience": 0,
+  "expToLvlUp": 3,
+  "level": 1
+}
