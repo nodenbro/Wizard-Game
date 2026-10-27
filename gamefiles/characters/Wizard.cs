@@ -47,13 +47,14 @@ public class Wizard
     {
         string[] spells = 
             {
-                "Pink Fire",
-                "Midget Flame",
-                "Dark Lords Semen",
-                "My girlfriends anger issues",
+                "HUUUUGE small fireball",
+                "FUS RO DUH",
+                "Dark Lord's Semen",
+                "My girlfriend's anger issues",
                 "i had no idea what to write here",
-                "avadakadabra kurwaaa",
-                "random bullshit go"
+                "Xanax Attack",
+                "random bullshit go",
+                "Zeus, your son has returned... wrong move, just shoot fireball or something"
             };
         if (RemainingMana >= 50)
         {

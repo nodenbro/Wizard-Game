@@ -8,6 +8,8 @@ using System;
 class StartGame
 {
     // New game start method
+
+    int loadNumber = 1;
     public void NewGame()
     {
          // Set console title and color
@@ -42,13 +44,18 @@ class StartGame
         string jsonString = JsonSerializer.Serialize(wizard01, options);
 
         // Define the path where the JSON file will be saved
-        string filePath = "gamefiles/saves/wizard_test05.json";
+        while(File.Exists("gamefiles/saves/wizard_" + loadNumber + ".json"))
+        {
+            loadNumber++;
+        }
+
+        string filePath = "gamefiles/saves/wizard_" + loadNumber + ".json";
 
         // Write the JSON string to a file
         File.WriteAllText(filePath, jsonString);
 
         // Output the JSON data
-        Console.WriteLine("Gamefile created successfully!");
+        Console.WriteLine("Gamefile created successfully! " + filePath);
 
         epilogue_chap_1 epilogue = new epilogue_chap_1();
         epilogue.StartEpilogueCh1(wizard01);
