@@ -14,64 +14,64 @@ class WizardGame
     {
         Commands command = new Commands();
         // Checks if the save file exists
-        if (File.Exists("gamefiles/saves/wizard_test05.json"))
+        if (File.Exists("gamefiles/saves/wizard_1.json"))
         {
-            try
-            {
-                // Defines the path of the JSON savefile to read
-                string filePath = "gamefiles/saves/wizard_test05.json";
+            // try
+            // {
+            //     // Defines the path of the JSON savefile to read
+            //     string filePath = "gamefiles/saves/wizard_1.json";
 
-                // Reads the JSON file into a string
-                string jsonString = File.ReadAllText(filePath);
+            //     // Reads the JSON file into a string
+            //     string jsonString = File.ReadAllText(filePath);
 
 
 
-                // Step 4: Deserializes the JSON string to a C# object
-                Wizard wizard = JsonSerializer.Deserialize<Wizard>(jsonString);
+            //     // Step 4: Deserializes the JSON string to a C# object
+            //     Wizard wizard = JsonSerializer.Deserialize<Wizard>(jsonString);
 
-                // Uses the deserialized object to use the properties as well as add delay
-                Console.WriteLine($"Wizard's name: {wizard.Name}");
-                Console.WriteLine($"Affinity: {wizard.Affinity}");
+            //     // Uses the deserialized object to use the properties as well as add delay
+            //     Console.WriteLine($"Wizard's name: {wizard.Name}");
+            //     Console.WriteLine($"Affinity: {wizard.Affinity}");
 
-                wizard.CastSpell();
-                GameDelays.actionDelay();
+            //     wizard.CastSpell();
+            //     GameDelays.actionDelay();
 
-                wizard.CastSpell();
-                GameDelays.actionDelay();
+            //     wizard.CastSpell();
+            //     GameDelays.actionDelay();
 
-                wizard.CastSpell();
-                GameDelays.actionDelay();
+            //     wizard.CastSpell();
+            //     GameDelays.actionDelay();
 
-                Console.WriteLine($"Your level is: {wizard.Level}");
-                GameDelays.actionDelay();
+            //     Console.WriteLine($"Your level is: {wizard.Level}");
+            //     GameDelays.actionDelay();
 
-                Console.WriteLine($"Your Mana is: {wizard.Mana}");
-                GameDelays.actionDelay();
+            //     Console.WriteLine($"Your Mana is: {wizard.Mana}");
+            //     GameDelays.actionDelay();
 
-                Console.WriteLine($"Your Remaining Mana is: {wizard.RemainingMana}");
-                GameDelays.actionDelay();
+            //     Console.WriteLine($"Your Remaining Mana is: {wizard.RemainingMana}");
+            //     GameDelays.actionDelay();
 
-                // Serialize the object to JSON
-                var options = new JsonSerializerOptions { WriteIndented = true };
-                string saveProgress = JsonSerializer.Serialize(wizard, options);
+            //     // Serialize the object to JSON
+            //     var options = new JsonSerializerOptions { WriteIndented = true };
+            //     string saveProgress = JsonSerializer.Serialize(wizard, options);
 
-                // Define the path where the JSON file will be saved
-                string saveFilePath = "gamefiles/saves/wizard_test05.json";
+            //     // Define the path where the JSON file will be saved
+            //     string saveFilePath = "gamefiles/saves/wizard_1.json";
 
-                // Write the JSON string to a file
-                File.WriteAllText(saveFilePath, saveProgress);
+            //     // Write the JSON string to a file
+            //     File.WriteAllText(saveFilePath, saveProgress);
 
-                // Output the JSON data
-                Console.WriteLine("Game saved successfully!");
+            //     // Output the JSON data
+            //     Console.WriteLine("Game saved successfully!");
 
-                epilogue_chap_1 epilogue = new epilogue_chap_1();
-                epilogue.StartEpilogueCh1(wizard);
+            //     epilogue_chap_1 epilogue = new epilogue_chap_1();
+            //     epilogue.StartEpilogueCh1(wizard);
 
-            }
-            catch (Exception err)
-            {
-                Console.WriteLine($"Error reading or deserializing the file: {err.Message}");
-            }
+            // }
+            // catch (Exception err)
+            // {
+            //     Console.WriteLine($"Error reading or deserializing the file: {err.Message}");
+            // }
         }
         else
         {
@@ -107,7 +107,7 @@ class WizardGame
             string jsonString = JsonSerializer.Serialize(wizard01, options);
 
             // Define the path where the JSON file will be saved
-            string filePath = "gamefiles/saves/wizard_test05.json";
+            string filePath = "gamefiles/saves/wizard_1.json";
 
             // Write the JSON string to a file
             File.WriteAllText(filePath, jsonString);
@@ -160,12 +160,12 @@ class WizardGame
         // Dictionary mapping affinity to color
         var affinityColors = new Dictionary<string, ConsoleColor>
         {
-            { "fire", ConsoleColor.Red },
-            { "water", ConsoleColor.Blue },
-            { "earth", ConsoleColor.DarkGreen },
-            { "light", ConsoleColor.Yellow },
-            { "darkness", ConsoleColor.DarkMagenta },
-            { "lightning", ConsoleColor.Yellow }
+            { "Fire", ConsoleColor.Red },
+            { "Water", ConsoleColor.Blue },
+            { "Earth", ConsoleColor.DarkGreen },
+            { "Light", ConsoleColor.Yellow },
+            { "Darkness", ConsoleColor.DarkMagenta },
+            { "Lightning", ConsoleColor.Yellow }
         };
 
         foreach (var affinityColor in affinityColors)
@@ -210,7 +210,7 @@ class WizardGame
     // Function to display the affinity with the corresponding color
     public static void DisplayAffinity(string affinity)
     {
-        // Dictionary mapping affinity to color
+        // // Dictionary mapping affinity to color
         var affinityColors = new Dictionary<string, ConsoleColor>
         {
             { "fire", ConsoleColor.Red },

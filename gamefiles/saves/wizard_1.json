@@ -1,0 +1,9 @@
+{
+  "name": "fire",
+  "affinity": "fire",
+  "mana": 450,
+  "remainingMana": 350,
+  "experience": 6,
+  "expToLvlUp": 13,
+  "level": 2
+}
