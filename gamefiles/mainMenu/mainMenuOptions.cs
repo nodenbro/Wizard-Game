@@ -36,33 +36,6 @@ class MainMenuOptions
 
                 loadInput = Console.ReadLine();
 
-
-
-                // if (int.TryParse(loadInput, out _))
-                // {
-                //     while()
-
-                //     if(loadNumberInput < 1 || loadInput != Directory.GetFiles("gamefiles/saves", "wizard_*.json"))
-                //     {
-                //             Console.WriteLine("Invalid savefile number. Come on man, choose a valid number for crying out loud");
-                //             Console.ReadKey();
-                //             return;
-                //     }
-                //     else
-                //     {
-                        
-                //         Console.WriteLine("Loading your savefile number: " + loadNumberInput);
-
-                //         // Load existing game save
-                //         Console.ReadKey();
-                //         LoadGame loadGame = new LoadGame();
-                //         Console.Clear();
-                //         loadGame.Load(loadNumberInput); 
-                //     }
-                // }
-
-
-
                 foreach (var file in Directory.GetFiles("gamefiles/saves", "wizard_*.json"))
                 {
                     // Reads the JSON file into a string
@@ -78,7 +51,7 @@ class MainMenuOptions
                         Console.WriteLine("Loading your savefile number: " + loadInput);
 
                         // Load existing game save
-                        Console.ReadKey();
+                        GameDelays.loadDelay();
                         LoadGame loadGame = new LoadGame();
                         Console.Clear();
                         saveFilePath = file;
@@ -94,7 +67,7 @@ class MainMenuOptions
                 if (!isLoadNameTrue)
                 {         
                     Console.WriteLine("Want to be a wizard? Try again with a valid savefile name or just make a new one man. Come on, try again");
-                    GameDelays.actionDelay();
+                    GameDelays.loadDelay();
 
                     Console.WriteLine("Please enter a valid savefile name this time for the love of god:");
                     loadInput = Console.ReadLine();
@@ -109,7 +82,7 @@ class MainMenuOptions
                             Console.WriteLine("Loading your savefile number: " + loadInput);
 
                             // Load existing game save
-                            Console.ReadKey();
+                            GameDelays.loadDelay();
                             LoadGame loadGame = new LoadGame();
                             Console.Clear();
                             saveFilePath = file;
@@ -120,7 +93,7 @@ class MainMenuOptions
                         {
                             isLoadNameTrue = false;
                             Console.WriteLine("We just went through this... actually, never mind, I'll do it for you!");
-                            GameDelays.actionDelay();
+                            GameDelays.loadDelay();
                             // Here you create a new game save file
                             Console.WriteLine("Starting a new game...");
                             StartGame forcedNewGame = new StartGame();
