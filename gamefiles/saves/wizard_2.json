@@ -1,9 +1,10 @@
 {
   "name": "rahip",
   "affinity": "fire",
-  "mana": 450,
-  "remainingMana": 350,
-  "experience": 6,
-  "expToLvlUp": 13,
-  "level": 2
+  "mana": 500,
+  "remainingMana": 500,
+  "experience": 2,
+  "expToLvlUp": 23,
+  "level": 3,
+  "savepath": null
 }

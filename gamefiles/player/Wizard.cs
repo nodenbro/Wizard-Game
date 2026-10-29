@@ -23,6 +23,9 @@ public class Wizard
 
     [JsonPropertyName("level")]
     public int Level { get; set;}
+    
+    [JsonPropertyName("savepath")]
+    public string SavePath { get; set;}
 
     [JsonConstructor]
     public Wizard(string name, string affinity)

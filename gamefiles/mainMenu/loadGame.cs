@@ -1,5 +1,6 @@
 namespace MainMenu;
 
+using gamefiles.epilogue;
 using System.IO;
 using gamefiles.config;
 using wizard_char;
@@ -9,107 +10,96 @@ public class LoadGame
 {
     // Loading Screen
 
-    public void Load(int loadNumber)
+    public void Load(string loadName, string saveFilePath)
     {
-        // Console.WriteLine("Welcome to the Wizard Game! Would you like to continue your load game or would you like to start a new game? (Y/N)\n");
-        // string input = Console.ReadLine()?.ToLower();
+        Console.WriteLine("Loading your savefile: " + loadName);
 
-        // if (input == "y")
-        // {
-
-            
-
-            // Check if the save file exists
-            if (File.Exists("gamefiles/saves/wizard_" + loadNumber + ".json"))
-            {
-                try
-                {
-                    Console.WriteLine("The path is: " + "gamefiles/saves/wizard_" + loadNumber + ".json");
-                    GameDelays.loadDelay();
-                    // Load the main game file
-
+        // Check if the save file exists
+        if (File.Exists(saveFilePath))
+        {
             try
             {
-                // Defines the path of the JSON savefile to read
-                string filePath = "gamefiles/saves/wizard_" + loadNumber + ".json";
+                Console.WriteLine("The path is: " + saveFilePath);
+                GameDelays.loadDelay();
+                // Load the main game file
 
-                // Reads the JSON file into a string
-                string jsonString = File.ReadAllText(filePath);
+                try
+                {
+                    // Defines the path of the JSON savefile to read
+                    string filePath = saveFilePath;
+
+                    // Reads the JSON file into a string
+                    string jsonString = File.ReadAllText(filePath);
 
 
-                // Step 4: Deserializes the JSON string to a C# object
-                Wizard wizard = JsonSerializer.Deserialize<Wizard>(jsonString);
+                    // Step 4: Deserializes the JSON string to a C# object
+                    Wizard wizard = JsonSerializer.Deserialize<Wizard>(jsonString);
 
-                // Uses the deserialized object to use the properties as well as add delay
-                Console.WriteLine($"Wizard's name: {wizard.Name}");
-                Console.WriteLine($"Affinity: {wizard.Affinity}");
+                    // Uses the deserialized object to use the properties as well as add delay
+                    Console.WriteLine($"Wizard's name: {wizard.Name}");
+                    Console.WriteLine($"Affinity: {wizard.Affinity}");
 
-                wizard.CastSpell();
-                GameDelays.actionDelay();
+                    wizard.CastSpell();
+                    GameDelays.actionDelay();
 
-                wizard.CastSpell();
-                GameDelays.actionDelay();
+                    wizard.CastSpell();
+                    GameDelays.actionDelay();
 
-                wizard.CastSpell();
-                GameDelays.actionDelay();
+                    wizard.CastSpell();
+                    GameDelays.actionDelay();
 
-                Console.WriteLine($"Your level is: {wizard.Level}");
-                GameDelays.actionDelay();
+                    Console.WriteLine($"Your level is: {wizard.Level}");
+                    GameDelays.actionDelay();
 
-                Console.WriteLine($"Your Mana is: {wizard.Mana}");
-                GameDelays.actionDelay();
+                    Console.WriteLine($"Your Mana is: {wizard.Mana}");
+                    GameDelays.actionDelay();
 
-                Console.WriteLine($"Your Remaining Mana is: {wizard.RemainingMana}");
-                GameDelays.actionDelay();
+                    Console.WriteLine($"Your Remaining Mana is: {wizard.RemainingMana}");
+                    GameDelays.actionDelay();
 
-                // Serialize the object to JSON
-                var options = new JsonSerializerOptions { WriteIndented = true };
-                string saveProgress = JsonSerializer.Serialize(wizard, options);
+                    // Serialize the object to JSON
+                    var options = new JsonSerializerOptions { WriteIndented = true };
+                    string saveProgress = JsonSerializer.Serialize(wizard, options);
 
-                // Define the path where the JSON file will be saved
-                string saveFilePath = "gamefiles/saves/wizard_" + loadNumber + ".json";
+                    // Define the path where the JSON file will be saved
+                    string savePath = saveFilePath;
 
-                // Write the JSON string to a file
-                File.WriteAllText(saveFilePath, saveProgress);
+                    // Write the JSON string to a file
+                    File.WriteAllText(savePath, saveProgress);
 
-                // Output the JSON data
-                Console.WriteLine("Game saved successfully!");
+                    // Output the JSON data
+                    Console.WriteLine("Game saved successfully!");
+                    GameDelays.actionDelay();
 
-            }
-            catch (Exception err)
-            {
-                Console.WriteLine($"Error reading or deserializing the file: {err.Message}");
-            }
+                    epilogue_chap_1 epilogue = new epilogue_chap_1();
+                    epilogue.StartEpilogueCh1(wizard);
 
-                    // WizardGame game = new WizardGame();
-                    // game.Start();
                 }
                 catch (Exception err)
                 {
-                    Console.WriteLine("Error loading the game: " + err.Message);
+                    Console.WriteLine($"Error reading or deserializing the file: {err.Message}");
                 }
+
+                // WizardGame game = new WizardGame();
+                // game.Start();
             }
-            else
+            catch (Exception err)
             {
-                Console.WriteLine(loadNumber);
-                Console.WriteLine("No save file found. Starting a new game...\n");
-
-                // Here you load the new game file after waiting for a few seconds to execute
-
-                GameDelays.newGameDelay();
-
-                StartGame game = new StartGame();
-                game.NewGame();
-                Console.ReadKey();
+                Console.WriteLine("Error loading the game: " + err.Message);
             }
-        // }
-        // else if (input == "n")
-        // {
-        //     Console.WriteLine("Starting a new game...");
-        //     StartGame newGame = new StartGame();
-        //     newGame.NewGame();
-        //     // Here you load the new game file
-        //     Console.ReadKey();
-        // }
+        }
+        else
+        {
+            Console.WriteLine(loadName);
+            Console.WriteLine("No save file found. Starting a new game...\n");
+
+            // Here you load the new game file after waiting for a few seconds to execute
+
+            GameDelays.newGameDelay();
+
+            StartGame game = new StartGame();
+            game.NewGame();
+            Console.ReadKey();
+        }
     }
 }
