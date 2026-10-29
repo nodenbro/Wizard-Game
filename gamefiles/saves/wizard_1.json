@@ -1,9 +1,10 @@
 {
   "name": "fire",
   "affinity": "fire",
-  "mana": 450,
-  "remainingMana": 350,
-  "experience": 6,
-  "expToLvlUp": 13,
-  "level": 2
+  "mana": 650,
+  "remainingMana": 250,
+  "experience": 26,
+  "expToLvlUp": 53,
+  "level": 6,
+  "savepath": "gamefiles/saves/wizard_1.json"
 }

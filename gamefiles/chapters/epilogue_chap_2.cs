@@ -8,7 +8,7 @@ class epilogue_chap_2
     public void StartEpilogueCh2(Wizard wizard)
     {
         
-
+        
         Console.WriteLine("Epilogue Chapter 2 begins...");
         GameDelays.actionDelay();
 
@@ -16,7 +16,7 @@ class epilogue_chap_2
         Console.WriteLine($"Welcome back, {wizard.Name}, to the continuation of your journey!");
         GameDelays.actionDelay();
 
-        // Additional epilogue logic can be added here
+        // This is the logic of the epilogue
 
         
 
