@@ -44,6 +44,8 @@ public class Wizard
         ExpToLvlUp = 3f;
 
         Level = 1;
+
+        SavePath = "";
     }
 
     public void CastSpell()
@@ -102,5 +104,10 @@ public class Wizard
         Console.WriteLine(Name + " gathers Mana from their surrounding and replenishes their Mana.\n");
         RemainingMana = Mana;
         Console.WriteLine("Your Mana is back to " + RemainingMana + "\n");
+    }
+
+    public void SetSavePath(string saveFilePath)
+    {
+        SavePath = saveFilePath;
     }
 }

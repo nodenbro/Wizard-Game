@@ -41,7 +41,7 @@ class StartGame
 
         // Serialize the object to JSON
         var options = new JsonSerializerOptions { WriteIndented = true };
-        string jsonString = JsonSerializer.Serialize(wizard01, options);
+        
 
         // Define the path where the JSON file will be saved
         while(File.Exists("gamefiles/saves/wizard_" + loadNumber + ".json"))
@@ -50,6 +50,10 @@ class StartGame
         }
 
         string filePath = "gamefiles/saves/wizard_" + loadNumber + ".json";
+
+        wizard01.SetSavePath(filePath);
+
+        string jsonString = JsonSerializer.Serialize(wizard01, options);
 
         // Write the JSON string to a file
         File.WriteAllText(filePath, jsonString);

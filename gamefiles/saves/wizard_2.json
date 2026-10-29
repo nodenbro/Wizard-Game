@@ -1,10 +1,10 @@
 {
-  "name": "rahip",
+  "name": "Erblin",
   "affinity": "fire",
-  "mana": 500,
-  "remainingMana": 500,
-  "experience": 2,
-  "expToLvlUp": 23,
-  "level": 3,
-  "savepath": null
+  "mana": 400,
+  "remainingMana": 400,
+  "experience": 0,
+  "expToLvlUp": 3,
+  "level": 1,
+  "savepath": "gamefiles/saves/wizard_2.json"
 }
