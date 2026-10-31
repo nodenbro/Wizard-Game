@@ -36,28 +36,6 @@ public class LoadGame
                 // Step 4: Deserializes the JSON string to a C# object
                 Wizard wizard = JsonSerializer.Deserialize<Wizard>(jsonString);
 
-                // Uses the deserialized object to use the properties as well as add delay
-                Console.WriteLine($"Wizard's name: {wizard.Name}");
-                Console.WriteLine($"Affinity: {wizard.Affinity}");
-
-                wizard.CastSpell();
-                GameDelays.actionDelay();
-
-                wizard.CastSpell();
-                GameDelays.actionDelay();
-
-                wizard.CastSpell();
-                GameDelays.actionDelay();
-
-                Console.WriteLine($"Your level is: {wizard.Level}");
-                GameDelays.actionDelay();
-
-                Console.WriteLine($"Your Mana is: {wizard.Mana}");
-                GameDelays.actionDelay();
-
-                Console.WriteLine($"Your Remaining Mana is: {wizard.RemainingMana}");
-                GameDelays.actionDelay();
-
                 // Serialize the object to JSON
                 var options = new JsonSerializerOptions { WriteIndented = true };
                 string saveProgress = JsonSerializer.Serialize(wizard, options);
@@ -72,9 +50,9 @@ public class LoadGame
                 Console.WriteLine("Game saved successfully!");
                 GameDelays.actionDelay();
 
-                epilogue_chap_1 epilogue = new epilogue_chap_1();
-                epilogue.StartEpilogueCh1(wizard);
-
+                
+                GameLoader gameLoader = new GameLoader();
+                gameLoader.StartQuest(wizard);
             }
             catch (Exception err)
             {

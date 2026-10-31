@@ -117,6 +117,7 @@ class WizardGame_oldCode
                     break;
             }
         }while (incorrectAffinity != false);
+        
 
         // Keep the console open
         Console.ReadKey();

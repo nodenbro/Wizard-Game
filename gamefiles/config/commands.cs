@@ -15,18 +15,18 @@ class Commands
         if (command == "!commands")
         {
             Console.WriteLine("Welcome to the command line interface!");
-            Console.WriteLine("Type '!help' to see a list of available commands.");
+            Console.WriteLine("Type '.help' to see a list of available commands.");
             string input = Console.ReadLine();
             switch (input.ToLower())
             {
-                case "!help":
+                case ".help":
                     ShowHelp();
                     break;
-                case "!exit":
+                case ".exit":
                     ExitGame();
                     break;
                 default:
-                    Console.WriteLine("Unknown command. Type '!help' for a list of commands.");
+                    Console.WriteLine("Unknown command. Type '.help' for a list of commands.");
                     break;
             }
         }
@@ -36,9 +36,10 @@ class Commands
         Console.WriteLine("Available commands:");
         Console.WriteLine("1. help - Show this help message");
         Console.WriteLine("2. exit - Exit the game");
-        Console.Clear();
+        string userCommand = Console.ReadLine();
+        ProcessCommand(userCommand);
         
-        return;
+        // return;
         // Add more commands as needed
     }
 

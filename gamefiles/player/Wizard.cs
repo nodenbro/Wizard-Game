@@ -65,16 +65,16 @@ public class Wizard
         {
             Random rnd = new Random();
             Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.WriteLine(Name + " casts " + spells[rnd.Next(0, 7)] +"\n");
+            Console.WriteLine($"{Name} casts {spells[rnd.Next(0, 7)]}\n");
             Console.ForegroundColor = ConsoleColor.White;
 
             RemainingMana -= 50;
-            Console.WriteLine("\nYou have " + RemainingMana + " Mana\n");
+            Console.WriteLine($"\nYou have {RemainingMana}/{Mana} Mana\n");
             Experience += 3;
         }
         else
         {
-            Console.WriteLine("Oh no, " + Name + " is out of blue juice.\n");
+            Console.WriteLine($"Oh no, {Name} is out of blue juice.\n");
             Console.WriteLine("Quickly, replenish the Mana. \n");
             Meditate();
         }
@@ -82,12 +82,12 @@ public class Wizard
         if (Experience >= ExpToLvlUp)
         {
             Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.WriteLine("Congratulations " + Name + " , you have LEVELED UP!.\n");
+            Console.WriteLine($"Congratulations {Name}, you have LEVELED UP!.\n");
 
             Level += 1;
 
             Console.ForegroundColor = ConsoleColor.DarkRed;
-            Console.WriteLine(Name + " is now Level " + Level + "\n");
+            Console.WriteLine($"{Name} is now Level {Level}\n");
             Console.ForegroundColor = ConsoleColor.White;
 
             Mana += 50;
@@ -101,9 +101,9 @@ public class Wizard
 
     public void Meditate()
     {
-        Console.WriteLine(Name + " gathers Mana from their surrounding and replenishes their Mana.\n");
+        Console.WriteLine($"{Name} gathers Mana from their surrounding and replenishes their Mana.\n");
         RemainingMana = Mana;
-        Console.WriteLine("Your Mana is back to " + RemainingMana + "\n");
+        Console.WriteLine($"Your Mana is back to {RemainingMana}/{Mana}\n");
     }
 
     public void SetSavePath(string saveFilePath)
