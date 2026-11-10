@@ -7,8 +7,6 @@ class epilogue_chap_1
 {
     public void StartEpilogueCh1(Wizard wizard)
     {
-        
-
         Console.WriteLine("Epilogue Chapter 1 begins...");
         GameDelays.actionDelay();
 
@@ -17,6 +15,20 @@ class epilogue_chap_1
         GameDelays.actionDelay();
 
         // Additional epilogue logic can be added here
+
+        wizard.CastSpell();
+
+        GameDelays.actionDelay();
+        wizard.CastSpell();
+
+        GameDelays.actionDelay();
+        wizard.CastSpell();
+
+        GameDelays.actionDelay();
+
+        AutoSave.SavingProgress(wizard);
+
+        GameDelays.actionDelay();
 
         epilogue_chap_2 epilogue2 = new epilogue_chap_2();
         epilogue2.StartEpilogueCh2(wizard);
