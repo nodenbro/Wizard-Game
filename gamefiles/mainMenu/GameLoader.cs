@@ -10,6 +10,7 @@ using gamefiles.epilogue;
 class GameLoader 
 {  
     epilogue_chap_1 epilogue = new epilogue_chap_1();
+    
     // Starts the game
     public void StartQuest(Wizard wizard)
     {
@@ -18,7 +19,6 @@ class GameLoader
         Console.WriteLine($"Wizard's name: {wizard.Name}");
         Console.WriteLine($"Affinity: {wizard.Affinity}");  
 
-        
         epilogue.StartEpilogueCh1(wizard);
 
         // Keep the console open

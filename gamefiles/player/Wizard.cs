@@ -1,4 +1,6 @@
 using System.Text.Json.Serialization;
+using System.Linq;
+
 namespace wizard_char;
 
 public class Wizard 
@@ -50,25 +52,46 @@ public class Wizard
 
     public void CastSpell()
     {
-        string[] spells = 
-            {
-                "HUUUUGE small fireball",
-                "FUS RO DUH",
-                "Dark Lord's Semen",
-                "My girlfriend's anger issues",
-                "i had no idea what to write here",
-                "Xanax Attack",
-                "random bullshit go",
-                "Zeus, your son has returned... wrong move, just shoot fireball or something"
-            };
-        if (RemainingMana >= 50)
+        var spellCost = new Dictionary<string, int>
         {
-            Random rnd = new Random();
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.WriteLine($"{Name} casts {spells[rnd.Next(0, 7)]}\n");
-            Console.ForegroundColor = ConsoleColor.White;
+            { "HUUUUGE small fireball", 5},
+            { "FUS RO DUH", 32},
+            { "Dark Lord's Semen", 69},
+            { "My girlfriend's anger issues", 74},
+            { "i had no idea what to write here", 99},
+            { "Xanax Attack", 1500},
+            { "random bullshit go", 510},
+            { "Zeus, your son has returned... wrong move, just shoot fireball or something", 777}
+        };
+            
+        if (RemainingMana > 50)
+        {
+            // Random rnd = new Random();
+            // Console.ForegroundColor = ConsoleColor.Magenta;
+            // Console.WriteLine($"{Name} casts {spells[rnd.Next(0, 7)]}\n");
+            // Console.ForegroundColor = ConsoleColor.White;
 
-            RemainingMana -= 50;
+            Random randomNum = new Random();
+
+            KeyValuePair<string, int> randomSpell = spellCost.ElementAt(randomNum.Next(spellCost.Count - 1));
+
+            // var testingSpell = spell[randomNum.Next(0, 7)];
+
+            if(randomSpell.Value > RemainingMana)
+            {
+                Console.WriteLine($"Nice try, bucko, but you don't have enough Mana for this one.\n");
+                Console.WriteLine("Quickly, replenish the Mana. \n");
+                return;
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.WriteLine($"{Name} casts {randomSpell.Key} which costs {randomSpell.Value} Mana.\n");
+                Console.ForegroundColor = ConsoleColor.White;
+                RemainingMana -= randomSpell.Value;
+            }
+
+            
             Console.WriteLine($"\nYou have {RemainingMana}/{Mana} Mana\n");
             Experience += 3;
         }
